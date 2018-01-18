@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Driving Car</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<button type="button" value="start" onclick="Start()">Start</button>
+	<button type="button" value="stop" onclick="Stop()">Stop</button>
+	<button type="button" value="reset" onclick="Reset()">Reset</button>
+
+	<div class="car1"><img class="car1" src="images/orangeCar.png"></div>
+	<!-- <div class="car2"><img class="car2" src="images/redCar.png"></div>
+	<div class="car3"><img class="car3" src="images/pinkCar.png"></div> -->
+	
+	<div class="intersection1"></div>
+	<div class="intersection2"></div>
+	<div class="intersection3"></div>
+	<div class="intersection4"></div>
+
+	<div class="blackRoad"></div>
+	
+		
+	<script type="text/javascript">
+		var car1 = document.querySelector('.car1');
+		// var car2 = document.querySelector('.car2');
+		// var car3 = document.querySelector('.car3');
+		var intersection1 = document.querySelector('.intersection1');
+		var enteringIntersection = false;
+		var leavingIntersection = false;
+
+		var intervalId;
+
+		Reset();
+
+		function Reset(){
+			car1.style.top = "50px";
+			car1.style.left = "30px";
+			;
+
+			// car2.style.top = "0px";
+			// car2.style.left = "30px";
+
+			// car3.style.top = "0px";
+			// car3.style.left = "30px"
+
+			intersection1.style.left = "1015px";
+			intersection1.style.width = "350px";
+		}
+
+		function getCarInfo() {
+			var car1Left = parseInt(car1.style.left.replace("px",""));
+			var car1Right = parseInt(car1.style.left.replace("px","")) + parseInt(car1.style.width.replace("px",""));
+			var intersection1Left = parseInt(intersection1.style.left.replace("px",""));
+			var intersection1Right = parseInt(intersection1.style.left.replace("px", "")) + parseInt(intersection1.style.width.replace("px",""));
+			var intersection1Width = parseInt(intersection1.style.width.replace("px",""));
+			var result = {car1Right: car1Right, car1Left: car1Left, intersection1Right: intersection1Right, intersection1Left: intersection1Left, intersection1Width: intersection1Width};
+
+			return result;
+		}
+
+		
+		function checkEnteringIntersection() {
+			var info = getCarInfo();
+
+			if(info.car1Right > info.car1Left && info.car1Right < info.intersection1Right && info.car1Left < info.intersection1Left) {
+				intersection1.style.borderLeft = "solid 20px yellow";
+				enteringIntersection = true;
+			}
+			else {
+				intersection1.style.borderLeft = "";
+				enteringIntersection = false;
+			}
+		}
+
+		function checkExitingIntersection() {
+			var info = getCarInfo();
+
+			if(info.car1Left < info.intersection1Right && info.car1Left > info.intersection1Left 
+				&& info.intersection1Right > info.intersection1Right) {
+				intersection1.style.borderRight = "solid 20px yellow";
+				leavingIntersection = true;
+			}
+			else {
+				intersection1.style.borderRight = "";
+				leavingIntersection = false;
+			}
+		}
+
+		function checkIntersectionWidth() {
+			if(enteringIntersection || leavingIntersection) {
+				intersection.style.width = '280px';
+			}
+			else {
+				intersection1.style.width = '300px';
+			}
+		}
+
+		function checkInsideIntersection() {
+			var info = getCarInfo();
+			if(info.car1Left > info.intersection1Left && info.car1Right < info.intersection1Right) {
+				intersection1.style.backgroundColor = "magenta";
+			}
+			else {
+				intersection1.style.backgroundColor = "blue";
+			}
+		}
+		function moveTheCarToTheRight() {
+			car1.style.left = `${parseInt(car1.style.left.replace("px", "")) + 10}px`;
+
+			// car2.style.left = `${parseInt(car1.style.left.replace("px", "")) + 50}px`;
+
+			// car3.style.left = `${parseInt(car1.style.left.replace("px", "")) + 100}px`;
+		}
+		function Stop() {
+			clearInterval(intervalId);
+		}
+
+		function Start(){
+			intervalId = setInterval(doAll, 50);
+		}
+
+		function doAll() {
+			moveTheCarToTheRight();
+			checkEnteringIntersection();
+			checkExitingIntersection();
+			checkIntersectionWidth();
+			checkInsideIntersection();
+		}
+
+	</script>
+</body>
+</html>

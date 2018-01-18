@@ -1,0 +1,121 @@
+/*Time to put your javascript animation skills to the test. Drive a car around the block.
+ Navigate the car to each intersection. Come to a complete stop (preferably slowly - 
+ don't want to spill your drink with sudden stops). Then enter the intersection(corner) 
+ and make a right turn. Drive to the next intersection and again come to a complete stop. 
+ Enter the intersection and make a right turn. Repeat over and over.
+
+There are three buttons at the top of the screen! Start the car driving. 
+Stop the car where it is. Reset the car.
+
+Extra credit:
+
+Add a slower driving car to the road
+When you car approaches a slower car, pass it
+No passing in the intersection!
+See how many cars you can add to the road and safely navigate!
+Remember, no cars can occupy the same space.
+
+Add buttons to do the following:
+	- Start the car driving down the road
+	- Stop the car
+	- Reset the car to its starting point;
+
+In HTML, create a black road that travels around a rectangle at least as thick as three cars
+
+When you get to an intersection come to a full stop
+
+Then make a right turn into the next lane of traffic
+
+Continue driving around the block
+
+Extra Credit: introduce a slower driving car
+	- When your fast car catches the slow car
+	- Speed up and pass the slow car
+	- NO passing in the intersection;
+*/
+body{
+	margin:0px;
+}
+
+.blackRoad {
+	position: relative;	
+	background-color: white;
+   	height: 100vh;
+    border: 350px solid black;
+    padding: 25px;
+    margin: 25px;
+}
+.car, .car1 {
+
+	position: absolute;
+	z-index: 10;
+	height: 100px;
+	width: 200px;
+	top: 0px;
+	left:0px;
+	/*border:1px solid white;*/
+}
+.car2, .car2{
+	position: absolute;
+	z-index: 10;
+	height: 100px;
+	width: 200px;
+	margin-top: 77px;
+	top: 0px;
+	left:0px;
+	/*border:1px solid white;*/
+}
+.car3, .car3{
+	position: absolute;
+	z-index: 10;
+	height: 100px;
+	width: 200px;
+	margin-top: 130px;
+	top: 0px;
+	left:0px;
+	/*border:1px solid white;*/
+}
+.intersection1{
+	position: absolute;
+	background-color: grey;
+	border: 1px solid black;
+	width: 350px;
+	height: 350px;
+	top:44px;
+	left:1015px;
+	z-index: 2;
+	
+}
+.intersection2{
+	position: absolute;
+	background-color: grey;
+	border: 1px solid black;
+	width: 350px;
+	height: 350px;
+	top:1356px;
+	left:1014px;
+	z-index: 2;
+	
+}
+.intersection3{
+	position: absolute;
+	background-color: grey;
+	border: 1px solid black;
+	width: 350px;
+	height: 350px;
+	top:1356px;
+	left:24px;
+	z-index: 2;
+	
+}
+.intersection4{
+	position: absolute;
+	background-color: grey;
+	border: 1px solid black;
+	width: 350px;
+	height: 350px;
+	top:45px;
+	left:24px;
+	z-index: 1;
+	
+}
