@@ -33,89 +33,87 @@ Extra Credit: introduce a slower driving car
 	- Speed up and pass the slow car
 	- NO passing in the intersection;
 */
-body{
+	body{
 	margin:0px;
-}
+	}
 
-.blackRoad {
-	position: relative;	
-	background-color: white;
-   	height: 100vh;
-    border: 350px solid black;
-    padding: 25px;
-    margin: 25px;
-}
-.car, .car1 {
+	.blackRoad {
+        position: absolute;
+        background-color: white;
+        height: 700px;
+        width: 600px;
+        border: 155px solid black;
+        padding: 25px;
+        margin: 25px;
+    }
 
-	position: absolute;
-	z-index: 10;
-	height: 100px;
-	width: 200px;
-	top: 0px;
-	left:0px;
-	/*border:1px solid white;*/
-}
-.car2, .car2{
-	position: absolute;
-	z-index: 10;
-	height: 100px;
-	width: 200px;
-	margin-top: 77px;
-	top: 0px;
-	left:0px;
-	/*border:1px solid white;*/
-}
-.car3, .car3{
-	position: absolute;
-	z-index: 10;
-	height: 100px;
-	width: 200px;
-	margin-top: 130px;
-	top: 0px;
-	left:0px;
-	/*border:1px solid white;*/
-}
-.intersection1{
-	position: absolute;
-	background-color: grey;
-	border: 1px solid black;
-	width: 350px;
-	height: 350px;
-	top:44px;
-	left:1015px;
-	z-index: 2;
+    .car, .car1{
+
+        position: absolute;
+        z-index: 10;
+        height: 100px;
+        width: 150px;
+        top: 0px;
+        left: 0px;
+        
+    }
+	.car2, .car2{
+
+        position: absolute;
+        z-index: 10;
+        height: 100px;
+        width: 150px;
+        top: 0px;
+        left: 0px;
+        
+    }
+	img {
+		transition: all 2s;
+		position: absolute;
+		top: 100px;
+		left: 100px;
+	}
 	
-}
-.intersection2{
-	position: absolute;
-	background-color: grey;
-	border: 1px solid black;
-	width: 350px;
-	height: 350px;
-	top:1356px;
-	left:1014px;
-	z-index: 2;
-	
-}
-.intersection3{
-	position: absolute;
-	background-color: grey;
-	border: 1px solid black;
-	width: 350px;
-	height: 350px;
-	top:1356px;
-	left:24px;
-	z-index: 2;
-	
-}
-.intersection4{
-	position: absolute;
-	background-color: grey;
-	border: 1px solid black;
-	width: 350px;
-	height: 350px;
-	top:45px;
-	left:24px;
-	z-index: 1;
-	
-}
+    .intersection1 {
+        position: absolute;
+        background-color: grey;
+        border: 1px solid black;
+        width: 145px;
+        height: 155px;
+        top: 55px;
+        left: 830px;
+        z-index: 2;
+    }
+
+    .intersection2 {
+        position: absolute;
+        background-color: grey;
+        border: 1px solid black;
+        width: 145px;
+        height: 155px;
+       	top: 955px;
+        left: 835px;
+        z-index: 2;
+    }
+
+    .intersection3 {
+        position: absolute;
+        background-color: grey;
+        border: 1px solid black;
+       	width: 145px;
+        height: 155px;
+        top: 955px;
+        left: 30px;
+        z-index: 2;
+    }
+
+    .intersection4 {
+        position: absolute;
+        background-color: grey;
+        border: 1px solid black;
+        width: 145px;
+        height: 155px;
+        top: 55px;
+        left: 30px;
+        z-index: 1;
+    }
